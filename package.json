@@ -1,0 +1,26 @@
+{
+  "name": "silverlining-timeseries",
+  "version": "1.0.0",
+  "description": "Cloudant time-series library built on Silverlining",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibm-watson-data-lab/silverlining-timeseries.git"
+  },
+  "keywords": [
+    "cloudant",
+    "time"
+  ],
+  "author": "Glynn Bird <glynn.bird@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ibm-watson-data-lab/silverlining-timeseries/issues"
+  },
+  "homepage": "https://github.com/ibm-watson-data-lab/silverlining-timeseries#readme",
+  "dependencies": {
+    "silverlining": "^1.24.6"
+  }
+}
