@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ibm-watson-data-lab/silverlining-timeseries#readme",
   "dependencies": {
+    "qrate": "^1.0.2",
     "silverlining": "^1.24.6"
   },
   "devDependencies": {

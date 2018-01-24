@@ -13,7 +13,6 @@ describe('db', function() {
   });
 
   it('should have the requisite functions', function() {
-    console.log(db);
     assert.equal(typeof db.setup, 'object');
     assert.equal(typeof db.setup.create, 'function');
     assert.equal(typeof db.setup.sum, 'function');
@@ -141,7 +140,6 @@ describe('db', function() {
     var docsave = { x:6, year: 2018, month:1, day: 2, hour:3, min:4, second: 5}
  
     var mocks = nock(SERVER)
-      .log(console.log)
       .post('/mydb_2018_01/_bulk_docs',{docs: [docsave]} ).reply(200, {ok:true, id:'mydoc', rev: '1-123' });
 
     return nosql.insert(docsend, d.getTime()).then(function(data) {
