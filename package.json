@@ -1,14 +1,14 @@
 {
-  "name": "silverlining-timeseries",
+  "name": "cloudant-timeseries",
   "version": "1.0.0",
-  "description": "Cloudant time-series library built on Silverlining",
+  "description": "Cloudant time-series library built on cloudant-quickstart",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibm-watson-data-lab/silverlining-timeseries.git"
+    "url": "git+https://github.com/ibm-watson-data-lab/cloudant-timeseries.git"
   },
   "keywords": [
     "cloudant",
@@ -17,12 +17,12 @@
   "author": "Glynn Bird <glynn.bird@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ibm-watson-data-lab/silverlining-timeseries/issues"
+    "url": "https://github.com/ibm-watson-data-lab/cloudant-timeseries/issues"
   },
-  "homepage": "https://github.com/ibm-watson-data-lab/silverlining-timeseries#readme",
+  "homepage": "https://github.com/ibm-watson-data-lab/cloudant-timeseries#readme",
   "dependencies": {
-    "qrate": "^1.0.2",
-    "silverlining": "^1.24.6"
+    "cloudant-quickstart": "^1.25.1",
+    "qrate": "^1.0.2"
   },
   "devDependencies": {
     "mocha": "^4.1.0",
