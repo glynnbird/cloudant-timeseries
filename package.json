@@ -4,7 +4,9 @@
   "description": "Cloudant time-series library built on cloudant-quickstart",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "codestylefix": "standard --fix index.js lib/*.js",
+    "codestyle": "standard index.js lib/*.js",
+    "test": "npm run codestyle && ./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
   },
   "devDependencies": {
     "mocha": "^4.1.0",
-    "nock": "^9.1.6"
+    "nock": "^9.1.6",
+    "standard": "^10.0.3"
   }
 }
