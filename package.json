@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ibm-watson-data-lab/cloudant-timeseries#readme",
   "dependencies": {
-    "cloudant-quickstart": "^1.25.1",
+    "cloudant-quickstart": "^1.25.2",
     "qrate": "^1.0.2"
   },
   "devDependencies": {

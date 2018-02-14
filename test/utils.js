@@ -143,6 +143,41 @@ describe('utils', function() {
     assert.deepEqual(r, answer);
   });
 
+  it('should combine objects when one is empty #1', function() {
+    var r1 = { 
+      sum: 10,
+      count: 5,
+      min: 1,
+      max: 20,
+      mean: 10,
+      variance: 1.39,
+      stddev: 1.18,
+      sumsqr: 50
+    };
+    var r2 = { 
+    };
+    var answer = r1
+    var r = utils.combine(r1,r2);
+    assert.deepEqual(r, answer);
+  });
+
+  it('should combine objects when one is empty #2', function() {
+    var r2 = { 
+      sum: 10,
+      count: 5,
+      min: 1,
+      max: 20,
+      mean: 10,
+      variance: 1.39,
+      stddev: 1.18,
+      sumsqr: 50
+    };
+    var r1 = []
+    var answer = r2
+    var r = utils.combine(r1,r2);
+    assert.deepEqual(r, answer);
+  });
+
   it('should combine aggregations correctly - numbers', function() {
     var r1 = 100;
     var r2 = 50;
