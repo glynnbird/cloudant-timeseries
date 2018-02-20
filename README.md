@@ -23,9 +23,17 @@ and using Cloudant's MapReduce views to aggregate the data, grouping by year, mo
 
 The only way to cleanly delete data is to delete a whole database. This is where *cloudant-timeseries* comes in.
 
-You interact with library as if you are talking to a single ever-growing database, but under-the-hood it is a collection of monthly databases.
+You interact with library as if you are talking to a single ever-growing database, but under-the-hood it is a collection of monthly databases where data is added to the current month's database:
 
-![schematic](images/schematic.png)
+![schematic](images/timeseries1.png)
+
+Queries are directed at all databases and the results aggregated:
+
+![schematic](images/timeseries2.png)
+
+Old data can be deleted cleanly:
+
+![schematic](images/timeseries3.png)
 
 It is built on top of the the [cloudant-quickstart](https://www.npmjs.com/package/cloudant-quickstart) library which handles the aggregation API.
 
