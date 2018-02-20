@@ -1,6 +1,6 @@
 {
   "name": "cloudant-timeseries",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Cloudant time-series library built on cloudant-quickstart",
   "main": "index.js",
   "scripts": {
