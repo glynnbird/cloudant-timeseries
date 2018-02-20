@@ -86,6 +86,14 @@ This instructs *cloudant-timeseries* to
 
 This takes a little while because 2 years of monthly databases are created with the correct design documents.
 
+The "setup a design document" steps are optional. The shortest path to setup is:
+
+    db.setup.create()
+      .then( () => db.setup.done() )
+      .catch(console.error);
+
+which only creates the empty databases.
+
 ## Just add data
 
 Now we're set up, we can start adding data, a document at a time:
@@ -138,7 +146,21 @@ These were the three queries we set up at the beginning. We can add new ones if 
 
 and the library will create any design documents required.
 
+## Deleting data
+
+One of the main advantages of having monthly databases is that you can delete old data very easily. This library makes it easier still. Simply call `deleteOlderThan` passing in a timestamp and data older than that date (to the nearest month) will be removed:
+
+    // remove all data before 2017
+    db.deleteOlderThan('2017-01-01').then(console.log)
+
+Note: deletion is a permenant and irreversible operation. Be careful.
+
 ## How does this all work?
+
+If you ask to setup a database called "mydb", under the hood there will by a "mydb" database that holds the design documents you define at startup and a monthly database for 2 years in the future e.g. "mydb_2018_01", "mydb_2018_02" etc.
+
+When you query the database, *all* the databases are queried in turn and the results are aggregated for you. This is less efficient than the "one database contains everything" approach, but it does allow older unwanted data to be removed easily.
 
 ## Running setup again
 
+If you are running out of databases, simply run `db.setup.done()` again an fresh batch of two years of monthly databases will be created.
